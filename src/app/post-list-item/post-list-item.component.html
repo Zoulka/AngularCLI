@@ -1,6 +1,6 @@
 <li [ngClass]="{'list-group-item':true, 'list-group-item-success': loveIts > donttLove  && loveIts >0,
 'list-group-item-danger': donttLove > loveIts && donttLove > 0}">
- <h1>{{title}} <span style="position: absolute; right: 20px;">{{create_at | date: 'yMMMMEEEEd' }}</span></h1>
+ <h1>{{title}} <span style="position: absolute; right: 20px;">{{create_at | date: 'short' }}</span></h1>
   <p>{{content}}</p>
   <button class="btn btn-success" (click)="onLove()">Love Its !</button>&nbsp;
   <button class="btn btn-danger" (click)="onDontLove()">Don't love its !</button>
