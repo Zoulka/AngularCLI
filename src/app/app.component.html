@@ -1,0 +1,22 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Mes appareils</h2>
+
+      <!-- Pipe avec date-pour la partie Mise à jour -->
+      <p>Mis à jour : {{ lastUpdate  | date: 'yMMMMEEEEd' |uppercase  }}</p>
+        <ul class="list-group">
+          <!-- *ngFor est la directive strurelle qui est liée à appareils dans app.component.ts -->
+          <app-appareil *ngFor="let appareil of appareils"
+          [appareilName]="appareil.name"
+          [appareilStatus]="appareil.stauts"></app-appareil>
+
+         </ul>
+      <button class="btn btn-success"
+              [disabled]="!isAuth"
+              (click)="onAllumer()">Tout allumer</button>
+    </div>
+  </div>
+</div>
+
